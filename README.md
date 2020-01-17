@@ -2,9 +2,9 @@
 
 ## TPs <!-- omit in toc -->
 - [TP0 - FooBarQix](#TP0---FooBarQix)
-- [TP1 - Calculatrice à notation polonaise inverse](TP1)
-- [TP2 - Bowling Game](TP2)
-- [TP3 - Des nombres et des mots](TP3)
+- [TP1 - Calculatrice à notation polonaise inverse](#TP1---Calculatrice-à-notation-polonaise-inverse)
+- [TP2 - Bowling Game](TP2---Bowling-Game)
+- [TP3 - Des nombres et des mots](TP3---Des-nombres-et-des-mots)
 # TP0 - FooBarQix <!-- omit in toc -->
 
 ## Sommaire <!-- omit in toc -->
