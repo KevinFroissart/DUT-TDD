@@ -1,0 +1,28 @@
+package fr.univlille.iutinfo;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Dictionnary {
+
+private Map<String, String> dictionnary;
+	
+	public Dictionnary() {
+		dictionnary = new HashMap<>();
+		dictionnary.put("0", "");
+		dictionnary.put("1", "Un");
+		dictionnary.put("2", "Deux");
+		dictionnary.put("3", "Trois");
+		dictionnary.put("4", "Quatre");
+		dictionnary.put("5", "Cinq");
+		dictionnary.put("6", "Six");
+		dictionnary.put("7", "Sept");
+		dictionnary.put("8", "Huit");
+		dictionnary.put("9", "Neuf");
+		dictionnary.put("10", "Dix");
+	}
+	
+	public String get(String number) {
+    	return dictionnary.get(number);
+    }
+}

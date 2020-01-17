@@ -1,0 +1,50 @@
+package fr.univlille.iutinfo;
+
+public class BowlingGame {
+
+	private int score;
+	private int coefLancer;
+	private int nbLancersCompteDouble;
+	private int nbJeu;
+
+	public BowlingGame() {
+		this.score = 0;
+		this.nbLancersCompteDouble = 0;
+		this.coefLancer = 1;
+	}
+
+	public void roll (int pins) {
+		if(reserve > 1) {
+			score += pins * reserve;
+			reserve --;
+		} else {
+			score += pins;
+		}
+		oldShot += pins;
+		nbLance += 0.5;		
+	}
+
+	public void strike () {
+		reserve = 3;
+		if(nbLance > 10) reserve = 2;
+		//i/f(nbLance > 10) reserve = 1;
+		roll(10);
+		nbLance ++;
+		oldShot = 0;
+	}
+
+	public void spare () {
+		reserve = 2;
+		roll(10);
+		nbLance += 0.5;		
+		oldShot = 0;
+	}
+
+	public int score () {
+		return score;
+	}
+
+	public String toString () {
+		return coups;
+	}
+}

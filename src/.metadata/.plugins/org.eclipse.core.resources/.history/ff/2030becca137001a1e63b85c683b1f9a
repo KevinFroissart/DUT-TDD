@@ -1,0 +1,44 @@
+package fr.univlille.iutinfo;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class BowlingGameTest {
+
+	@Test
+	public void score_should_return_the_sum_of_knocked_pins () {
+		BowlingGame game = playOnNewGame("7 2 | 4 4 | 1 3 |");
+		assertEquals(21, game.score());
+	}
+
+	@Test
+	public void score_should_take_the_spare_bonus () {
+		BowlingGame game = playOnNewGame("6 / | 4 ");
+		assertEquals(18, game.score());
+	}
+	
+
+	@Test
+	public void score_should_take_the_strike_bonus () {
+		BowlingGame game = playOnNewGame("X | 4 5");
+		assertEquals(28, game.score());
+		BowlingGame game2 = playOnNewGame("X | 4 / | X | 4 5");
+		assertEquals(68, game2.score());
+	}
+
+	private BowlingGame playOnNewGame(String string) {
+		BowlingGame game = new BowlingGame();
+		String[] lance = string.split("|");
+		for(int nbLance = 0; nbLance < lance.length; nbLance++) {
+			String[] coup = lance[nbLance].split(" ");
+			for(int nbCoup = 0; nbCoup < coup.length; nbCoup++) {
+				if(coup[nbCoup].equals("|")) break;
+				if(coup[nbCoup].matches("X")) game.strike();
+				else if(coup[nbCoup].matches("/")) game.spare();
+				else game.roll(Integer.parseInt(coup[nbCoup]));
+			}
+		}
+		return game;
+	}
+}

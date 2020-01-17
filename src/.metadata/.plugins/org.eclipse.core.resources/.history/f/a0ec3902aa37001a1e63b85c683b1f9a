@@ -1,0 +1,48 @@
+package fr.univlille.iutinfo;
+
+public class BowlingGame {
+
+	private int score;
+	private int coefLancer;
+	private int nbLancersCompteDouble;
+	private int nbJeu;
+
+	public BowlingGame() {
+		this.score = 0;
+		this.nbLancersCompteDouble = 0;
+		this.coefLancer = 1;
+	}
+
+	public void majNbLancersCompteDouble (int i) {
+		if (nbJeu < 9 || i < 0) nbLancersCompteDouble += i;
+	}
+	
+	public void majCoefLancer () {
+		if (nbLancersCompteDouble < 1) coefLancer = 1;
+		else if (nbLancersCompteDouble == 3) {
+			coefLancer = nbLancersCompteDouble;
+			majNbLancersCompteDouble(-2);
+		}
+		else {
+			coefLancer = 2;
+			majNbLancersCompteDouble(-1);
+		}
+	}
+	
+	public void roll (int pins) {
+        score += pins * coefLancer;
+        majCoefLancer();
+    }
+	
+	public String toString () {
+		return null;
+	}
+
+    public int score () {
+        return score;
+    }
+
+    public void next() {
+    	nbJeu++;
+    }
+}

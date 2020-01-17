@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp3-robin"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp3-correction"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp3-froissart"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp2-test"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp2-froissart"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp1-dieryckx-waymel"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp1-froissart-bourdin"/>
+			<item value="/home/infoetu/froissak/ws-coa-tdd/tp0-froissart-bourdin"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

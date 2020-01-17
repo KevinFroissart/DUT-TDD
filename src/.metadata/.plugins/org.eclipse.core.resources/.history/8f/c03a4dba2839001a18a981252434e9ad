@@ -1,0 +1,14 @@
+package fr.univlille.iutinfo;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class NumeralTest {
+	
+	@Test
+	public void testUnite() {
+		assertEquals(new Numeral("1").toLetters(), "Un");
+		assertEquals(new Numeral("7").toLetters(), "Sept");
+	}
+}

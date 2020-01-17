@@ -1,0 +1,11 @@
+package fr.univlille.iutinfo;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class ExampleTest {
+    @Test
+    public void should_return_hello_world() {
+        Assert.assertEquals("Hello World!", new Example().hello());
+    }
+}

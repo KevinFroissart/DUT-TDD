@@ -1,0 +1,46 @@
+package fr.univlille.iutinfo;
+
+public class BowlingGame {
+
+	private int score;
+	private String coups;
+	private double nbLance;
+	private int reserve;
+	private int oldShot;
+	
+	public BowlingGame() {
+		score = 0;
+		coups = "";
+	}
+	
+	public void roll (int pins) {
+		score += pins * reserve;
+		nbLance += 0.5;
+		oldShot = pins * reserve;
+		if(reserve > 1) reserve --;
+	}
+	
+	public void strike () {
+		score += 10;
+		nbLance += 0.5;
+		reserve = 3;
+		oldShot = 0;
+	}
+	
+	public void spare () {
+		score += 10 - oldShot;
+		nbLance += 0.5;
+		reserve = 2;
+		oldShot = 0;
+	}
+	
+	public int score () {
+		return score;
+	}
+
+	
+	public String toString () {
+		return coups;
+	}
+
+}

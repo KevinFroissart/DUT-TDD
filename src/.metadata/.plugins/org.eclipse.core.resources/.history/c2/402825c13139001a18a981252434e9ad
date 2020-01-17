@@ -1,0 +1,55 @@
+package fr.univlille.iutinfo;
+
+public class Numeral {
+	private String number;
+	private Dictionnary dictionnary;
+
+	public Numeral(String number) {
+		this.number = number.trim();
+		this.dictionnary = new Dictionnary();
+	}
+
+	public String toLetters () { 
+		String result = "";
+		int toInteger = Integer.parseInt(number);
+
+		if(toInteger <= 16) result = dictionnary.get(number);
+		else if(toInteger < 100) result = extractTens(number);
+		return result;
+	}
+
+	public String extractTens(String number) {
+		int firstNumber = Integer.parseInt(number.charAt(0) + "0");
+		int secondNumber = Integer.parseInt(number) - firstNumber;
+		
+		String separator = (secondNumber == 1) ? " et " : "-";
+		
+		if(firstNumber == 70 || firstNumber == 90) secondNumber += 10;
+
+		return dictionnary.get("" + firstNumber) + separator + new Numeral("" + secondNumber).toLetters().toLowerCase();
+	}
+	
+	private String extractHundreds(int numberInt) {
+		int firstNumber = (numberInt / 100) * 100;
+		int secondNumber = numberInt - firstNumber;
+		firstNumber = numberInt / 100;
+		
+		String cent = dictionnary.get("100");
+		
+		if(firstNumber == 1) firstNumber = 0;
+		
+		if(firstNumber > 1) {
+			cent = " " + dictionnary.get("100").toLowerCase();
+
+			if(secondNumber <= 0) {
+				cent += "s";
+			}
+		}
+		
+		String separator = "";
+		
+		if(secondNumber > 1) separator = " ";
+
+		return ("" + dictionnary.get("" + firstNumber)) + cent + separator + ("" + new Numeral("" + secondNumber).toLetters()).toLowerCase();
+	}
+}

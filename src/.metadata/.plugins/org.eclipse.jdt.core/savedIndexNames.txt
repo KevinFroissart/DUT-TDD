@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+/home/infoetu/froissak/ws-coa-tdd/.metadata/.plugins/org.eclipse.jdt.core
